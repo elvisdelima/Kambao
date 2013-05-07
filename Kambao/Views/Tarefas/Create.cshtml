@@ -1,0 +1,27 @@
+﻿@model Kambao.Core.Tarefa
+
+@{
+    Layout = "~/Views/Shared/_EmptyBootstrapLayout.cshtml";   
+}
+
+@Html.ValidationSummary(true)
+<fieldset>        
+    <div class="editor-label">
+        <p>Código</p>
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Codigo)
+        @Html.ValidationMessageFor(model => model.Codigo)
+    </div>
+
+    <div class="editor-label">
+        <p>Descrição</p>
+    </div>
+    <div class="editor-field">
+        @Html.TextAreaFor(model => model.Descricao)
+        @Html.ValidationMessageFor(model => model.Descricao)
+    </div>        
+</fieldset>
+   
+
+

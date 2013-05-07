@@ -1,0 +1,67 @@
+﻿@model Kambao.Core.Quadro
+
+@{
+    ViewBag.Title = "Quadro";
+}
+
+@section scripts {
+    <script src="/Scripts/jquery.signalR-1.0.0-rc2.js"></script>
+    <script src="/signalr/hubs"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.getJSON('Faixas/ListAll', function (data, tarefas) {
+                var faixas = data;
+
+                $.each(faixas, function (index, faixa) {
+                    var container = document.getElementById('container');
+                    $(container).append("<div id=fx" + faixa.Id + " class='faixa'>"
+                                            + faixa.Descricao +
+                                        "</div>");
+                });
+
+                $(".faixa").sortable({
+                    connectWith: ['.faixa'],
+                    placeholder: 'dragHelper',
+                    scroll: true,
+                    revert: true,
+                    opacity: 0.40,
+                    stop: function (e, ui) {
+                    }
+                });
+                
+                $(".faixa").droppable({
+                    drop: function (event, ui) {
+                        debugger;
+                        var idTarefa = ui.draggable.context.id;
+                        var idFaixa = event.target.id;
+                        quadro.server.moveCard(idTarefa, idFaixa);
+                    }
+                });
+
+            }).done(function () {
+                $.getJSON('Tarefas/ListAll', function (data) {
+                    var tarefas = data;
+                    $.each(tarefas, function (index, tarefa) {
+                        var faixa = document.getElementById("fx" + tarefa.faixa.Id);
+                        $(faixa).append("<div id=" + tarefa.Id + " class='card'>" +
+                                            "<h2 class='label label-inverse'>" + tarefa.Codigo + "</h2>" +
+                                            "<p>" + tarefa.Descricao + "</p>" +
+                                        "</div>");
+                    });
+                });
+            });                       
+            
+            var quadro = $.connection.quadroHub;
+
+            quadro.client.alterarFaixaDoCartao = function (idTarefa, idFaixa) {
+                var faixa = document.getElementById(idFaixa);
+                var tarefa = document.getElementById(idTarefa);
+                $(tarefa).effect("bounce", "slow");
+                $(faixa).append(tarefa);
+            };
+            
+            $.connection.hub.start();
+        });
+    </script>   
+}
+    

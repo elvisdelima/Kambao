@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="hero-unit">
+<h1>Bem vindo ao Kambao!</h1>
+<!--<p>Aqui você pode gerenciar as tarefas de sua equipe de maneira simples e eficiente.</p>-->
+
+<p>Kambao Chat Beta :)</p>
+<input type="text" id="textInput" />
+<ul id="messages">
+
+</ul>
+
+<button id="buttonSubmit">Enviar</button>
+<!--<a id="buttonSubmit" class="btn btn-primary btn-large">Enviar</a>-->
+</div>
+
+<script src="~/Scripts/jquery.signalR-1.0.0-rc2.js"></script>    
+<script src="/signalr/hubs"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var messages = $.connection.messageHub;
+      
+        messages.client.writeMessage = function (message) {
+            $("#messages").append("<li>" + message + "</li>");
+        };
+
+        $("#buttonSubmit").click(function () {           
+            var text = $("#textInput").val();
+            messages.server.sendMessage(text);
+        });
+
+        $.connection.hub.start();
+    });
+</script>
