@@ -1,4 +1,15 @@
-﻿textarea{ 
+﻿.gridActions {    
+    width: 40px; 
+    min-width:40px; 
+    max-height:40px; 
+}
+
+.tableColumn {
+    color: white;
+    background-color: black;
+
+}
+textarea{ 
   width: 500px; 
   min-width:500px; 
   max-height:500px; 

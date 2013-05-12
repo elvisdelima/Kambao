@@ -31,7 +31,7 @@
 	        [HttpGet]
 	        public virtual ActionResult Create()
 	        {
-	            return new OK();
+                return new OK(PartialView("Create"));
 	        }
 	
 	        [HttpGet]
@@ -48,7 +48,8 @@
 	        [HttpPost]
 	        public virtual ActionResult Create(T entidade)
 	        {
-	            return new Created();
+                Data.Save(entidade);
+	            return new Created(entidade);
 	        }
 	
 	        [HttpPut]

@@ -1,11 +1,15 @@
 ﻿@model Kambao.Core.Faixa
 
-@{
-    Layout = "~/Views/Shared/_EmptyBootstrapLayout.cshtml";   
-}
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Create Foo Bar</h3>
+</div>
 
-@Html.ValidationSummary(true)
-<fieldset>        
+@using (Html.BeginForm("Create", "Faixas", FormMethod.Post, new { @class = "modal-form" }))
+{
+@Html.ValidationSummary()
+
+<div  class="modal-body">
     <div class="editor-label">
         <p>Descrição</p>
     </div>
@@ -13,6 +17,11 @@
         @Html.EditorFor(model => model.Descricao)
         @Html.ValidationMessageFor(model => model.Descricao)
     </div>
-</fieldset>
+</div>
 
+<div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Undo</button>
+    <button class="btn btn-primary" type="submit">Save</button>
+</div>
 
+}

@@ -187,6 +187,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\mustache.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery-1.6.4.min.js" />
     <Content Include="Scripts\jquery.signalR-1.0.0-rc2.js" />
@@ -229,6 +230,7 @@
     <Content Include="Views\Faixas\Index.cshtml" />
     <Content Include="Views\Faixas\Create.cshtml" />
     <Content Include="Views\Shared\_EmptyBootstrapLayout.cshtml" />
+    <Content Include="Views\Faixas\_Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
