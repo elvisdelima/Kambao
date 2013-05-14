@@ -12,7 +12,7 @@ namespace Kambao.Data
             get { return SessionProvider.CurrentSession; }
         }
 
-        public T Get(long id)
+        public T Get(int id)
         {
             return NhSession.CreateCriteria<T>()
                 .Add(Restrictions.Eq("Id", id))
