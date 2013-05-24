@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Kambao.Core.Faixa>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+</br></br>
+
+<a href="#modalForm" role="button" class="btn btn-inverse" data-toggle="modal"><i class="icon-tasks icon-white"></i> Nova Faixa</a>
+ 
+</br></br>
+<table class="table table-striped table-bordered" id="myTable">
+    <thead>
+        <tr>        
+            <th class="gridActions"></th>
+            <th>Descrição</th>        
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var faixa in Model) 
+    {
+        <tr> 
+            <td><a href="<c:url value="/empresas/${empresa.id}/alterar" />"><i class="icon-edit"></i></a> 
+							    <a href="#"><i class="icon-trash"></i></a></td>							
+               
+            <th class="gridActions"><i class="icon-edit"></i> <i class="icon-trash"></i></th>    
+            <td class="span12">@faixa.Descricao</td>
+        </tr>
+    } 
+    </tbody>
+</table>
+
+<div id="modalForm" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+@using (Html.BeginForm("Create", "Faixas"))
+{
+    @Html.Partial("_Create", new Kambao.Core.Faixa() );
+}    
+</div>
+   
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".tbody > tr > td").addClass("tableColumn")
+    });
+
+</script>
