@@ -31,7 +31,6 @@
                 
                 $(".faixa").droppable({
                     drop: function (event, ui) {
-                        debugger;
                         var idTarefa = ui.draggable.context.id;
                         var idFaixa = event.target.id;
                         quadro.server.moveCard(idTarefa, idFaixa);
@@ -51,6 +50,8 @@
                 });
             });                       
             
+            //////////// SignalR ///////////////
+
             var quadro = $.connection.quadroHub;
 
             quadro.client.alterarFaixaDoCartao = function (idTarefa, idFaixa) {

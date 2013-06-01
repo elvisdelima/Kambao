@@ -1,4 +1,8 @@
-﻿.gridActions {    
+﻿.largerContainer {
+   width: 1350px; 
+}
+
+.gridActions {    
     width: 10px; 
     min-width:10px; 
     max-height:10px; 

@@ -1,10 +1,10 @@
 ﻿@model Kambao.Core.Tarefa
 
 @{
-    ViewBag.Title = "Nova Tarefa";
+    ViewBag.Title = "Edição de Tarefa";
 }
 
-@using (Html.BeginForm("Create", "Tarefas", FormMethod.Post, new { @class = "form-horizontal" }))
+@using (Html.BeginForm("Edit", "Tarefas", FormMethod.Post, new { @class = "form-horizontal" }))
 {
     @Html.Bootstrap().ControlGroup().TextBoxFor(model => model.Codigo).Label().LabelText("Código")
     @Html.Bootstrap().ControlGroup().TextAreaFor(model => model.Descricao).Label().LabelText("Descrição")
@@ -17,4 +17,3 @@
         </div>
     }
 }
-        
