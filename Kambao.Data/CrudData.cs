@@ -12,7 +12,7 @@ namespace Kambao.Data
             get { return SessionProvider.CurrentSession; }
         }
 
-        public T Get(long id)
+        public T Get(int id)
         {
             return NhSession.CreateCriteria<T>()
                 .Add(Restrictions.Eq("Id", id))
@@ -28,6 +28,11 @@ namespace Kambao.Data
         public void Save(T entidade)
         {
             NhSession.Save(entidade);
+        }
+
+        public void Update(T entidade)
+        {
+            NhSession.Update(entidade);
         }
 
         public IEnumerable<T> List()

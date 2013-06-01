@@ -13,7 +13,7 @@ using System.Web.Script.Serialization;
 namespace Kambao.Controllers
 {
     [ActAsRestfulie]
-    public class FaixasController : CrudController<Faixa>
+    public partial class FaixasController : CrudController<Faixa>
     {
         public FaixasController()
         {

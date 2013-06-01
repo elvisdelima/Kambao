@@ -10,9 +10,9 @@ using System.Web.Mvc;
 
 namespace Kambao.Controllers
 {
-    public class QuadroController : Controller
-    {        
-        public ActionResult Index()
+    public partial class QuadroController : Controller
+    {
+        public virtual ActionResult Index()
         {
             var session = SessionProvider.CurrentSession;
 

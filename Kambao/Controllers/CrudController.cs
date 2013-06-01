@@ -31,45 +31,40 @@
 	        [HttpGet]
 	        public virtual ActionResult Create()
 	        {
-                return new OK(PartialView("Create"));
+                return new OK();
 	        }
 	
 	        [HttpGet]
-	        public virtual ActionResult Edit(long id)
+	        public virtual ActionResult Edit(int id)
 	        {
-	            /*var DataObj = Data.Get(id);
+	            var DataObj = Data.Get(id);
 	
 	            if (DataObj == null)
 	                return new NotFound();
-                */
-                return new OK(PartialView("Create"));
-	            //return new OK(Data.Get(id));
+                
+	            return new OK(Data.Get(id));
 	        }
 	
 	        [HttpPost]
 	        public virtual ActionResult Create(T entidade)
 	        {
                 Data.Save(entidade);
-	            return new Created(entidade);
+                return RedirectToAction("Index");
 	        }
 	
-	        [HttpPut]
+	        [HttpPost]
 	        public virtual ActionResult Edit(T entidade)
 	        {
-	            throw new NotImplementedException();
+                Data.Update(entidade);
+                return RedirectToAction("Index");
 	        }
 	
-	        [HttpDelete]
-	        public virtual ActionResult Delete(long id)
+	        [HttpGet]
+	        public virtual ActionResult Delete(int id)
 	        {
 	            var DataObj = Data.Get(id);
-	
-	            if (DataObj == null)
-	                return new NotFound();
-	
 	            Data.Delete(DataObj);
-	
-	            return new OK();
+	            return RedirectToAction("Index");
 	        }
 	    }
 	}

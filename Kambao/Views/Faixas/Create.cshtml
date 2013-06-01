@@ -1,0 +1,19 @@
+﻿@model Kambao.Core.Faixa
+
+@{
+    ViewBag.Title = "Nova Faixa";
+}
+
+@using (Html.BeginForm("Create", "Faixas", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.Bootstrap().ControlGroup().TextBoxFor(model => model.Descricao).Label().LabelText("Descrição")
+	
+    using(Html.Bootstrap().Container().BeginFormActions())
+    {
+        <div>
+            @Html.Bootstrap().ActionLinkButton("Cancelar", "Index", "Faixas")
+            @Html.Bootstrap().SubmitButton().Text("Salvar").Style(ButtonStyle.Success)
+        </div>
+    }
+}
+        

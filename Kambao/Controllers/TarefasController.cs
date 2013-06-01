@@ -14,7 +14,7 @@ using System.Web.Script.Serialization;
 namespace Kambao.Controllers
 {
      [ActAsRestfulie]
-    public class TarefasController : CrudController<Tarefa>
+    public partial class TarefasController : CrudController<Tarefa>
     {
         public TarefasController()
         {
