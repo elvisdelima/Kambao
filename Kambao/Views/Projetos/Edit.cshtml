@@ -1,0 +1,18 @@
+﻿@model Kambao.Core.Projeto
+
+@{
+    ViewBag.Title = "Edição de Projeto";
+}
+
+@using (Html.BeginForm("Edit", "Projetos", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.Bootstrap().ControlGroup().TextBoxFor(model => model.Descricao).Label().LabelText("Descrição")
+	
+    using(Html.Bootstrap().Container().BeginFormActions())
+    {
+        <div>
+            @Html.Bootstrap().ActionLinkButton("Cancelar", "Index", "Projetos")
+            @Html.Bootstrap().SubmitButton().Text("Salvar").Style(ButtonStyle.Success)
+        </div>
+    }
+}

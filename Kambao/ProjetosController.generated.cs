@@ -22,10 +22,10 @@ using System.Web.Routing;
 using T4MVC;
 namespace Kambao.Controllers
 {
-    public partial class TarefasController
+    public partial class ProjetosController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected TarefasController(Dummy d) { }
+        protected ProjetosController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result)
@@ -55,13 +55,13 @@ namespace Kambao.Controllers
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public TarefasController Actions { get { return MVC.Tarefas; } }
+        public ProjetosController Actions { get { return MVC.Projetos; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "Tarefas";
+        public readonly string Name = "Projetos";
         [GeneratedCode("T4MVC", "2.0")]
-        public const string NameConst = "Tarefas";
+        public const string NameConst = "Projetos";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -124,16 +124,16 @@ namespace Kambao.Controllers
                 public readonly string Edit = "Edit";
                 public readonly string Index = "Index";
             }
-            public readonly string Create = "~/Views/Tarefas/Create.cshtml";
-            public readonly string Edit = "~/Views/Tarefas/Edit.cshtml";
-            public readonly string Index = "~/Views/Tarefas/Index.cshtml";
+            public readonly string Create = "~/Views/Projetos/Create.cshtml";
+            public readonly string Edit = "~/Views/Projetos/Edit.cshtml";
+            public readonly string Index = "~/Views/Projetos/Index.cshtml";
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_TarefasController : Kambao.Controllers.TarefasController
+    public partial class T4MVC_ProjetosController : Kambao.Controllers.ProjetosController
     {
-        public T4MVC_TarefasController() : base(Dummy.Instance) { }
+        public T4MVC_ProjetosController() : base(Dummy.Instance) { }
 
         partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
@@ -163,9 +163,9 @@ namespace Kambao.Controllers
             return callInfo;
         }
 
-        partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Kambao.Core.Tarefa entidade);
+        partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Kambao.Core.Projeto entidade);
 
-        public override System.Web.Mvc.ActionResult Create(Kambao.Core.Tarefa entidade)
+        public override System.Web.Mvc.ActionResult Create(Kambao.Core.Projeto entidade)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Create);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "entidade", entidade);
@@ -173,9 +173,9 @@ namespace Kambao.Controllers
             return callInfo;
         }
 
-        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Kambao.Core.Tarefa entidade);
+        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Kambao.Core.Projeto entidade);
 
-        public override System.Web.Mvc.ActionResult Edit(Kambao.Core.Tarefa entidade)
+        public override System.Web.Mvc.ActionResult Edit(Kambao.Core.Projeto entidade)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "entidade", entidade);

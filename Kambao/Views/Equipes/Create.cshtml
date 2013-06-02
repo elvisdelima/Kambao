@@ -1,0 +1,19 @@
+﻿@model Kambao.Core.Equipe
+
+@{
+    ViewBag.Title = "Nova Equipe";
+}
+
+@using (Html.BeginForm("Create", "Equipes", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.Bootstrap().ControlGroup().TextBoxFor(model => model.Descricao).Label().LabelText("Descrição")
+	
+    using(Html.Bootstrap().Container().BeginFormActions())
+    {
+        <div>
+            @Html.Bootstrap().ActionLinkButton("Cancelar", "Index", "Equipes")
+            @Html.Bootstrap().SubmitButton().Text("Salvar").Style(ButtonStyle.Success)
+        </div>
+    }
+}
+        

@@ -164,10 +164,15 @@
     <Content Include="App_Code\HelperPage.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\CrudController.cs" />
+    <Compile Include="Controllers\EquipesController.cs" />
     <Compile Include="Controllers\FaixasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProjetosController.cs" />
     <Compile Include="Controllers\QuadroController.cs" />
     <Compile Include="Controllers\TarefasController.cs" />
+    <Compile Include="EquipesController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="FaixasController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -179,6 +184,9 @@
     </Compile>
     <Compile Include="Hubs\MessageHub.cs" />
     <Compile Include="Hubs\QuadroHub.cs" />
+    <Compile Include="ProjetosController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuadroController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -270,6 +278,12 @@
       <LastGenOutput>T4MVC.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Tarefas\Edit.cshtml" />
+    <Content Include="Views\Equipes\Index.cshtml" />
+    <Content Include="Views\Equipes\Create.cshtml" />
+    <Content Include="Views\Equipes\Edit.cshtml" />
+    <Content Include="Views\Projetos\Create.cshtml" />
+    <Content Include="Views\Projetos\Edit.cshtml" />
+    <Content Include="Views\Projetos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

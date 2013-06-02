@@ -24,8 +24,10 @@ using T4MVC;
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static class MVC
 {
+    public static Kambao.Controllers.EquipesController Equipes = new Kambao.Controllers.T4MVC_EquipesController();
     public static Kambao.Controllers.FaixasController Faixas = new Kambao.Controllers.T4MVC_FaixasController();
     public static Kambao.Controllers.HomeController Home = new Kambao.Controllers.T4MVC_HomeController();
+    public static Kambao.Controllers.ProjetosController Projetos = new Kambao.Controllers.T4MVC_ProjetosController();
     public static Kambao.Controllers.QuadroController Quadro = new Kambao.Controllers.T4MVC_QuadroController();
     public static Kambao.Controllers.TarefasController Tarefas = new Kambao.Controllers.T4MVC_TarefasController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
@@ -133,6 +135,7 @@ namespace Links
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
             public static readonly string glyphicons_halflings_white_png = Url("glyphicons-halflings-white.png");
             public static readonly string glyphicons_halflings_png = Url("glyphicons-halflings.png");
+            public static readonly string kratos_jpg = Url("kratos.jpg");
         }
     
         public static readonly string kambao_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/kambao.min.css") ? Url("kambao.min.css") : Url("kambao.css");
