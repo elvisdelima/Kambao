@@ -12,6 +12,7 @@
         <tr>        
             <th class="gridActions"></th>            
             <th>Descrição</th>   
+            <th>Equipe</th>        
         </tr>
     </thead>
     <tbody>
@@ -22,7 +23,8 @@
                @Html.Bootstrap().ActionLinkButton("Editar", MVC.Projetos.Edit(projeto.Id)).Size(ButtonSize.Mini).Style(ButtonStyle.Default).IconPrepend(Icons.edit, false)
                @Html.Bootstrap().ActionLinkButton("Excluir", MVC.Projetos.Delete(projeto.Id)).Size(ButtonSize.Mini).Style(ButtonStyle.Default).IconPrepend(Icons.trash, false)                         
             </td>    
-            <td class="span12">@projeto.Descricao</td>
+            <td class="span9">@projeto.Descricao</td>
+            <td class="span3">@projeto.equipe.Descricao</td>
         </tr>
     } 
     </tbody>

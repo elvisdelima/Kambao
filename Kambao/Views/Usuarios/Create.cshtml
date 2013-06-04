@@ -1,0 +1,20 @@
+﻿@model Kambao.Core.Usuario
+
+@{
+    ViewBag.Title = "Novo Usuário";
+}
+
+@using (Html.BeginForm("Create", "Usuarios", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.Bootstrap().ControlGroup().TextBoxFor(model => model.Login).Label().LabelText("Login")
+	@Html.Bootstrap().ControlGroup().PasswordFor(model => model.Senha).Label().LabelText("Senha")
+    
+    using(Html.Bootstrap().Container().BeginFormActions())
+    {
+        <div>
+            @Html.Bootstrap().ActionLinkButton("Cancelar", "Index", "Usuarios")
+            @Html.Bootstrap().SubmitButton().Text("Salvar").Style(ButtonStyle.Success)
+        </div>
+    }
+}
+        

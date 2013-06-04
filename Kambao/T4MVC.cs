@@ -30,6 +30,7 @@ public static class MVC
     public static Kambao.Controllers.ProjetosController Projetos = new Kambao.Controllers.T4MVC_ProjetosController();
     public static Kambao.Controllers.QuadroController Quadro = new Kambao.Controllers.T4MVC_QuadroController();
     public static Kambao.Controllers.TarefasController Tarefas = new Kambao.Controllers.T4MVC_TarefasController();
+    public static Kambao.Controllers.UsuariosController Usuarios = new Kambao.Controllers.T4MVC_UsuariosController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 

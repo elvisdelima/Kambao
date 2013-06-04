@@ -170,6 +170,7 @@
     <Compile Include="Controllers\ProjetosController.cs" />
     <Compile Include="Controllers\QuadroController.cs" />
     <Compile Include="Controllers\TarefasController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="EquipesController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -201,6 +202,9 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="TarefasController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Windsor\ControllerInstaller.cs" />
@@ -284,6 +288,9 @@
     <Content Include="Views\Projetos\Create.cshtml" />
     <Content Include="Views\Projetos\Edit.cshtml" />
     <Content Include="Views\Projetos\Index.cshtml" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
