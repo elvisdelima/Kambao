@@ -41,7 +41,7 @@
                 $.getJSON('Tarefas/ListAll', function (data) {
                     var tarefas = data;
                     $.each(tarefas, function (index, tarefa) {
-                        var faixa = document.getElementById("fx" + tarefa.faixa.Id);
+                        var faixa = document.getElementById("fx" + tarefa.faixaId);
                         $(faixa).append("<div id=" + tarefa.Id + " class='card'>" +
                                             "<h2 class='label label-inverse'>" + tarefa.Codigo + "</h2>" +
                                             "<p>" + tarefa.Descricao + "</p>" +

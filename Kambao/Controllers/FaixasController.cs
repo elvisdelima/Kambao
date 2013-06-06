@@ -28,7 +28,7 @@ namespace Kambao.Controllers
 
         public string ListAll()
         {
-            string json = new JavaScriptSerializer().Serialize(Data.List());
+            string json = new JavaScriptSerializer().Serialize(Data.List().Select(t => new {t.Id, t.Descricao, t.Ordem}));
             return json;
         }
     }        
